@@ -8,6 +8,7 @@ import { ColorSwatches } from "@/components/color-swatches";
 import { SizeSelector } from "@/components/size-selector";
 import { useCart } from "@/components/cart-provider";
 import { WishlistButton } from "@/components/wishlist-button";
+import { ViewersWidget } from "@/components/viewers-widget";
 import { getSellerById } from "@/data/sellers";
 
 interface ProductInfoProps {
@@ -162,6 +163,9 @@ export function ProductInfo({ product }: ProductInfoProps) {
         selectedSize={selectedSize}
         onSelect={setSelectedSize}
       />
+
+      {/* Live viewers */}
+      <ViewersWidget />
 
       {/* Add to cart — prominent dark button */}
       <button
