@@ -219,7 +219,7 @@ function ProductsTable() {
           4 kolejne produkty ukryte
         </div>
         <Link
-          href="/seller/unlock?panel=return-rate-sku"
+          href="/seller/unlock?panel=return-rate-sku&source=table"
           className="inline-flex items-center justify-center rounded-md bg-stone-900 px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-stone-800"
         >
           {CTA_LABEL}
