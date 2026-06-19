@@ -13,6 +13,10 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
       capture_pageview: false,
       capture_pageleave: true,
     });
+    // Required for PostHog Toolbar
+    if (typeof window !== "undefined") {
+      (window as unknown as Record<string, unknown>).posthog = posthog;
+    }
   }, []);
 
   return <PHProvider client={posthog}>{children}</PHProvider>;
