@@ -11,12 +11,12 @@ import {
 } from "@/data/seller-mock";
 
 export const metadata: Metadata = {
-  title: "Twoj dashboard Analytics — FashionHero",
+  title: "Twój wynik finansowy — FashionHero",
   description: "Podglad sprzedazy, zwrotow i zysku Twojego sklepu.",
   robots: "noindex",
 };
 
-const CTA_LABEL = "Odblokuj Analytics Advanced — 49 PLN/mies.";
+const CTA_LABEL = "Pokaż mi pełny rachunek — 49 PLN/mies.";
 
 export default function SellerDashboardPage() {
   const netMarginRatio = mockSeller.netMargin / mockSeller.gmv;
@@ -28,10 +28,10 @@ export default function SellerDashboardPage() {
 
       <div className="mx-auto max-w-6xl px-6 py-10">
         <header className="mb-8">
-          <p className="text-xs uppercase tracking-widest text-stone-500">Twój sklep</p>
+          <p className="text-xs uppercase tracking-widest text-stone-500">Twój wynik finansowy</p>
           <h1 className="mt-1 text-3xl font-semibold tracking-tight">Cześć, {mockSeller.name}</h1>
           <p className="mt-1 text-sm text-stone-600">
-            Snapshot z ostatnich 30 dni · kategoria {mockSeller.category}
+            Ostatnie 30 dni · kategoria {mockSeller.category}
           </p>
         </header>
 
