@@ -148,3 +148,21 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+@keyframes rainbow-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.badge-rainbow {
+  background: linear-gradient(
+    270deg,
+    #4285f4, #9b72cb, #d96570, #f4a261, #52b788, #4285f4
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow-shift 3s ease infinite;
+}

@@ -9,8 +9,8 @@ import { MegaMenuNav, MobileMegaMenuContent } from "./mega-menu";
 import { useAuth } from "./auth-provider";
 
 const secondaryLinks = [
-  { label: "About", href: "/about" },
-  { label: "Seller", href: "/seller/dashboard" },
+  { label: "About", href: "/about", badge: undefined },
+  { label: "My Insights", href: "/seller/dashboard", badge: "New!" },
 ];
 
 interface HeaderProps {
@@ -52,9 +52,14 @@ export function Header({ onCartOpen, cartCount = 0, wishlistCount = 0 }: HeaderP
             <Link
               key={link.href}
               href={link.href}
-              className="hidden lg:block text-[12px] text-charcoal hover:opacity-60 transition-opacity"
+              className="hidden lg:inline-flex items-baseline gap-0.5 text-[12px] text-charcoal hover:opacity-60 transition-opacity"
             >
               {link.label}
+              {link.badge && (
+                <sup className="badge-rainbow text-[9px] font-bold leading-none">
+                  {link.badge}
+                </sup>
+              )}
             </Link>
           ))}
           <button
@@ -117,10 +122,15 @@ export function Header({ onCartOpen, cartCount = 0, wishlistCount = 0 }: HeaderP
             <Link
               key={link.href}
               href={link.href}
-              className="block text-sm py-2"
+              className="inline-flex items-baseline gap-0.5 text-sm py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               {link.label}
+              {link.badge && (
+                <sup className="badge-rainbow text-[9px] font-bold leading-none">
+                  {link.badge}
+                </sup>
+              )}
             </Link>
           ))}
         </div>
